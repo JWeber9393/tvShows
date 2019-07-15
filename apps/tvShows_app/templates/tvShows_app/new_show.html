@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Edit show {{Placeholder}}</h1>
+
+        <form action="/shows/create" method="POST">
+            {% csrf_token %}
+            Title:
+            <input type="text" name="title" placeholder="Add a show here...">
+
+            Network:
+            <input type="text" name="network" placeholder="Add a network here...">
+
+            Release Date:
+            <input type="date" name="release">
+
+            Description:
+            <input type="text" name="desc" placeholder="Add a description">
+
+            <input type="submit" value="Create">
+
+        </form>
+    </div>
+
+</body>
+</html>
