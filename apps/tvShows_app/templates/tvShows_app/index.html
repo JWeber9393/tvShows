@@ -19,16 +19,18 @@
                 <th>Actions</th>
             </thead>
 
-            <tr>
-                {% for show in shows %}
-                    <td>show.id</td>
-                    <td>show.title</td>
-                    <td>show.network</td>
-                    <td>show.releaseDate</td>
-                    <td></td>
-                {% endfor %}
-            </tr>
+            {% for show in shows %}
+                <tr>
+                    <td>{{show.id}}</td>
+                    <td>{{show.title}}</td>
+                    <td>{{show.network}}</td>
+                    <td>{{show.releaseDate}}</td>
+                    <td><a href="/shows/{{show.id}}">Show</a>|<a href="/shows/{{show.id}}/edit">Edit</a>|<a href="/shows/{{show.id}}/destroy">Delete</a>|</td>
+                </tr>
+            {% endfor %}
         </table>
+
+        <a href="/shows/new">Add a New Show</a>
 
     </div>
 
