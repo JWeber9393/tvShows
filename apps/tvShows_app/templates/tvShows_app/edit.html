@@ -12,19 +12,27 @@
         <h1>Edit Show {{show.id}}</h1>
         <a href="/shows">Go Back</a>
 
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
         <form action= "/shows/{{show.id}}/update" method="POST">
             {% csrf_token %}
             Title:
-            <input type="text" name="updateTitle">
+            <input type="text" name="title">
 
             Network:
-            <input type="text" name="updateNetwork">
+            <input type="text" name="network">
 
             Release Date:
-            <input type="date" name="updateRelease">
+            <input type="date" name="release">
 
             Description:
-            <input type="text" name="updateDesc">
+            <input type="text" name="desc">
 
             <input type="submit" value="Update">
 
