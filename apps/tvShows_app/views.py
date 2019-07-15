@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+    print('*'*100)
+    print('index route working')
+    return render(request, 'tvShows_app/index.html')
